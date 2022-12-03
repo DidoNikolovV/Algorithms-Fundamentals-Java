@@ -1,6 +1,7 @@
+import java.util.HashSet;
 import java.util.Scanner;
 
-public class PermutationsWithoutRepetition {
+public class PermutationsWithRepetition {
     public static String[] elements;
 
     public static void main(String[] args) {
@@ -16,11 +17,17 @@ public class PermutationsWithoutRepetition {
             print(elements);
             return;
         }
+        HashSet<String> swapped = new HashSet<>();
         permute(index + 1);
+        swapped.add(elements[index]);
         for(int i = index + 1; i < elements.length; i++) {
-            swap(elements, index, i);
-            permute(index + 1);
-            swap(elements, index, i);
+            if(!swapped.contains(elements[i])) {
+                swap(elements, index, i);
+                permute(index + 1);
+                swap(elements, index, i);
+                swapped.add(elements[i]);
+            }
+
         }
     }
 
