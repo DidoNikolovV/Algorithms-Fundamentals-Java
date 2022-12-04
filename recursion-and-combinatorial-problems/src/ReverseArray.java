@@ -1,0 +1,24 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+
+public class ReverseArray {
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+        String[] elements = reader.readLine().split("\\s+");
+
+        printReversedArray(elements, elements.length - 1);
+    }
+
+    public static void printReversedArray(String[] arr, int index) {
+        if(index < 0) {
+            return;
+        }
+
+        System.out.print(arr[index] + " ");
+        printReversedArray(arr, index - 1);
+    }
+
+}
