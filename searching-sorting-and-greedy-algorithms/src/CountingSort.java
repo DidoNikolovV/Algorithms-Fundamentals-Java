@@ -1,8 +1,7 @@
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Scanner;
 
-public class SortingAlgorithmWithoutCompare {
+public class CountingSort {
 
     public static int[] counts;
 
