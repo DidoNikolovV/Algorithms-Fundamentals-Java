@@ -13,9 +13,13 @@ public class MergeSort {
 
         sort(arr);
 
+        StringBuilder builder = new StringBuilder();
+
         for(int number: arr) {
-            System.out.print(number + " ");
+            builder.append(number).append(" ");
         }
+
+        System.out.println(builder.toString());
 
     }
 
