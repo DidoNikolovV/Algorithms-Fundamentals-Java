@@ -51,17 +51,17 @@ public class Main {
     private static void bfs(int start, List<Deque<Integer>> components, List<List<Integer>> graph, boolean[] visited) {
       Deque<Integer> queue = new ArrayDeque<>();
       visited[start] = true;
-      queue.offer(start);
+      queue.push(start);
 
       while(!queue.isEmpty()) {
-          int node = queue.poll();
+          int node = queue.pop();
 
           components.get(components.size() - 1).offer(node);
 
           for(int child : graph.get(node)) {
               if(!visited[child]) {
                   visited[child] = true;
-                  queue.offer(child);
+                  queue.push(child);
               }
           }
       }
