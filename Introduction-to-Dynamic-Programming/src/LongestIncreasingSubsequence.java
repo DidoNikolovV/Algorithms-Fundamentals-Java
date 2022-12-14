@@ -1,5 +1,3 @@
-package lab;
-
 import java.util.*;
 
 public class LongestIncreasingSubsequence {
